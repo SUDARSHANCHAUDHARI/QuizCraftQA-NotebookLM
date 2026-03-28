@@ -1,9 +1,11 @@
-# Prompt — Personalised Study Plan
+# Study Plan Prompt
+
+**Instructions:**
+Copy and paste this prompt into NotebookLM after uploading the ISTQB Foundation Level syllabus PDF.
 
 ---
 
-## Prompt
-
+Prompt:
 ```
 Based on the uploaded ISTQB Foundation Level syllabus, create a 4-week study plan for someone preparing for the CTFL exam.
 

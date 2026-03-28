@@ -1,9 +1,11 @@
-# Prompt — Fill in the Blank
+# Fill-in-the-Blank Question Prompt
+
+**Instructions:**
+Copy and paste this prompt into NotebookLM after uploading an ISTQB syllabus PDF. Replace [CHAPTER/TOPIC] with your target area.
 
 ---
 
-## Prompt
-
+Prompt:
 ```
 From the uploaded ISTQB syllabus, generate 10 fill-in-the-blank questions about [CHAPTER/TOPIC].
 

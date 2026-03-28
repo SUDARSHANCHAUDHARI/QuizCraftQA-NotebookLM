@@ -1,11 +1,11 @@
-# Prompt — Multiple Choice Questions
+# Multiple Choice Question Prompt
 
-Use this prompt in NotebookLM after uploading an ISTQB syllabus PDF.
+**Instructions:**
+Copy and paste this prompt into NotebookLM after uploading an ISTQB syllabus PDF. Replace [CHAPTER/TOPIC] with your target area.
 
 ---
 
-## Prompt
-
+Prompt:
 ```
 From the uploaded ISTQB syllabus, generate 10 multiple choice questions based on [CHAPTER/TOPIC].
 
