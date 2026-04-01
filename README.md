@@ -1,73 +1,51 @@
-# QuizCraftQA-NotebookLM
+# QuizCraftQA NotebookLM
 
-![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
-![Last Updated](https://img.shields.io/badge/last--updated-March%202026-blue)
+[![CI](https://github.com/SUDARSHANCHAUDHARI/QuizCraftQA-NotebookLM/actions/workflows/ci.yml/badge.svg)](https://github.com/SUDARSHANCHAUDHARI/QuizCraftQA-NotebookLM/actions/workflows/ci.yml)
+[![Deploy](https://github.com/SUDARSHANCHAUDHARI/QuizCraftQA-NotebookLM/actions/workflows/deploy.yml/badge.svg)](https://github.com/SUDARSHANCHAUDHARI/QuizCraftQA-NotebookLM/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green)](https://sudarshanchaudhari.github.io/QuizCraftQA-NotebookLM/)
 
-Manual workflow for generating high-quality ISTQB exam questions using [Google NotebookLM](https://notebooklm.google.com).
+Ready-to-use NotebookLM prompt templates for ISTQB exam preparation. Browse, customise with your topic, and copy prompts directly into NotebookLM.
 
-## Overview
-This repository provides:
-- Prompt templates for different ISTQB question types (MCQ, True/False, Fill-in-the-blank, Study Plan)
-- Step-by-step guide for using NotebookLM with official ISTQB syllabus PDFs
-- Example outputs for reference
+## Features
 
-## Quick Start
-1. Go to [notebooklm.google.com](https://notebooklm.google.com)
-2. Create a new notebook
-3. Upload ISTQB syllabus PDFs from [QuizCraftQA](https://github.com/SUDARSHANCHAUDHARI/QuizCraftQA/tree/main/ISTQB)
-4. Copy a prompt from [`prompts/`](prompts/) and paste into NotebookLM
-5. Save good outputs to [`examples/`](examples/)
+- Prompt templates for MCQ, True/False, Fill-in-the-Blank, and Study Plan
+- Topic input fills `[CHAPTER/TOPIC]` live — no manual editing
+- One-click copy to clipboard
+- Weak areas variant for the Study Plan prompt
+- Example output tab showing real NotebookLM responses
+- Static app — deploys to GitHub Pages, no backend needed
 
-## Recommended PDFs
-| PDF | Level |
-|-----|-------|
-| ISTQB_CTFL_Syllabus_v4.0.1.pdf | Foundation *(start here)* |
-| ISTQB-CTAL-TA-Syllabus-v4.0-EN.pdf | Advanced — Test Analyst |
-| ISTQB_CTAL-TM_Syllabus_v3.0_ALL_.pdf | Advanced — Test Manager |
+## How to Use
 
+1. Open [NotebookLM](https://notebooklm.google.com) and upload your ISTQB syllabus PDF
+2. Open the [live app](https://sudarshanchaudhari.github.io/QuizCraftQA-NotebookLM/)
+3. Pick a prompt type, enter your topic, click **Copy prompt**
+4. Paste into the NotebookLM chat
 
-## Folder Structure
+## Quick Start (local)
 
-```mermaid
-graph TD
-	A[QuizCraftQA-NotebookLM]
-	A --> B(prompts/)
-	A --> C(examples/)
-	A --> D(README.md)
-	A --> E(CLAUDE.md)
-	A --> F(LICENSE)
-	A --> G(CONTRIBUTING.md)
-	B --> B1[multiple_choice.md]
-	B --> B2[true_false.md]
-	B --> B3[fill_in_blank.md]
-	B --> B4[study_plan.md]
-	B --> B5[prompt_template_example.md]
-	C --> C1[sample_mcq_output.md]
+```bash
+npm install
+npm run dev
 ```
 
-## FAQ & Troubleshooting
+Open `http://localhost:5173`.
 
-**Q: NotebookLM says it can't find the syllabus content?**
-A: Make sure you have uploaded the correct PDF and selected it as a source in your NotebookLM notebook.
+## Build for Production
 
-**Q: The generated questions are too simple or repetitive.**
-A: Try specifying a more focused [CHAPTER/TOPIC] in your prompt, or experiment with different prompt variations.
+```bash
+npm run build
+npm run preview
+```
 
-**Q: How do I add my own prompt or example?**
-A: See [CONTRIBUTING.md](CONTRIBUTING.md) for a template and instructions.
+## Tech Stack
 
-**Q: Can I use this for other certifications?**
-A: Yes, but you will need to adapt the prompts to match the structure and style of the other syllabus.
-
-## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and a template for new prompts/examples.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
-
-## Feedback
-Suggestions and improvements are welcome! Open an issue or pull request, or contact the maintainer.
+- React 19 (no build-time JSX — uses `React.createElement`)
+- Vite 4
+- Tailwind CSS 3
 
 ## Related Projects
-- [QuizCraftQA](https://github.com/SUDARSHANCHAUDHARI/QuizCraftQA) — Main web app
-- [QuizCraftQA-AI](https://github.com/SUDARSHANCHAUDHARI/QuizCraftQA-AI) — Gemini API backend
+
+- [QuizCraftQA](https://github.com/SUDARSHANCHAUDHARI/QuizCraftQA) — Main ISTQB quiz web app
+- [QuizCraftQA-AI](https://github.com/SUDARSHANCHAUDHARI/QuizCraftQA-AI) — AI question & study plan generator

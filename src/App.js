@@ -1,10 +1,14 @@
 import React from "react";
 import PromptCard from "./components/PromptCard.js";
-import { PROMPTS } from "./data/prompts.js";
+import ExampleOutput from "./components/ExampleOutput.js";
+import { PROMPTS, EXAMPLE_OUTPUT } from "./data/prompts.js";
 
 const h = React.createElement;
 
-const TABS = PROMPTS.map((p) => ({ id: p.id, label: p.label, icon: p.icon }));
+const TABS = [
+  ...PROMPTS.map((p) => ({ id: p.id, label: p.label, icon: p.icon })),
+  { id: EXAMPLE_OUTPUT.id, label: EXAMPLE_OUTPUT.label, icon: EXAMPLE_OUTPUT.icon },
+];
 
 export default function App() {
   const [activeTab, setActiveTab] = React.useState(PROMPTS[0].id);
@@ -90,7 +94,9 @@ export default function App() {
     h(
       "main",
       { className: "mx-auto max-w-5xl px-6 py-8" },
-      activePrompt && h(PromptCard, { key: activeTab, prompt: activePrompt })
+      activeTab === EXAMPLE_OUTPUT.id
+        ? h(ExampleOutput, null)
+        : activePrompt && h(PromptCard, { key: activeTab, prompt: activePrompt })
     )
   );
 }

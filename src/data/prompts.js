@@ -1,3 +1,37 @@
+export const EXAMPLE_OUTPUT = {
+  id: "examples",
+  label: "Example Output",
+  icon: "💡",
+  questions: [
+    {
+      q: "What is the primary purpose of testing according to the ISTQB Foundation syllabus?",
+      options: [
+        "To prove that the software has no defects",
+        "To evaluate software quality and reduce the risk of software failure",
+        "To ensure the development team follows the process",
+        "To automate repetitive tasks",
+      ],
+      answer: "B",
+      explanation:
+        "Testing evaluates quality and reduces risk — it cannot prove the absence of defects.",
+      section: "1.1.1",
+    },
+    {
+      q: "Which of the following is NOT a principle of testing?",
+      options: [
+        "Testing shows the presence of defects",
+        "Exhaustive testing is possible for small systems",
+        "Early testing saves time and money",
+        "Defects cluster together",
+      ],
+      answer: "B",
+      explanation:
+        "Exhaustive testing is impossible except for trivial cases — this is one of the seven testing principles.",
+      section: "1.3",
+    },
+  ],
+};
+
 export const PROMPTS = [
   {
     id: "mcq",
